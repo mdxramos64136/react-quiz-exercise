@@ -6,6 +6,7 @@ import Error from "./Error";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
+import Progress from "./Progress";
 
 const initialState = {
   questions: [],
@@ -47,10 +48,12 @@ function reducer(state, action) {
 
 export default function App() {
   //nested destructuring of initialState (state)
-  const [{ questions, status, index, answer }, dispatch] = useReducer(
+  const [{ questions, status, index, answer, points }, dispatch] = useReducer(
     reducer,
     initialState
   );
+
+  const maxPoints = questions.reduce((acc, item) => acc + item.points, 0);
 
   // derived state
   const numQuestions = questions.length;
@@ -72,6 +75,12 @@ export default function App() {
         )}
         {status === "active" && (
           <>
+            <Progress
+              index={index}
+              numQuestions={numQuestions}
+              points={points}
+              maxPoints={maxPoints}
+            />
             <Question
               question={questions[index]}
               dispatch={dispatch}
