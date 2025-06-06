@@ -4,20 +4,38 @@ import Main from "./Main";
 import Loader from "./Loader";
 import Error from "./Error";
 import StartScreen from "./StartScreen";
+import Question from "./Question";
 
 const initialState = {
   questions: [],
 
   //loading, error, ready, active, finished
   status: "loading",
+  index: 0,
+  answer: null,
+  points: 0,
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
+    case "active":
+      return { ...state, status: "active" };
     case "dataFailed":
       return { ...state, status: "error" };
+
+    case "newAnswer":
+      const question = state.questions.at(state.index);
+      return {
+        ...state,
+        answer: action.payload,
+        points:
+          action.payload === question.correctOption
+            ? state.points + question.points
+            : state.points,
+      };
+
     default:
       throw new Error("Action unknown");
   }
@@ -25,13 +43,14 @@ function reducer(state, action) {
 
 export default function App() {
   //nested destructuring of initialState (state)
-  const [{ questions, status }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, index, answer }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   // derived state
   const numQuestions = questions.length;
 
-  // aqui foi utilizado um then p/ lidar com a promisse.
-  // Nao foi utilizado  o async ????
   useEffect(function () {
     fetch("http://localhost:8000/questions")
       .then((res) => res.json())
@@ -44,7 +63,16 @@ export default function App() {
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
-        {status === "ready" && <StartScreen numQuestions={numQuestions} />}
+        {status === "ready" && (
+          <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
+        )}
+        {status === "active" && (
+          <Question
+            question={questions[index]}
+            dispatch={dispatch}
+            answer={answer}
+          />
+        )}
       </Main>
     </div>
   );
