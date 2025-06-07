@@ -1,17 +1,27 @@
 //Also need to pass the answer state here as it will determine if the button
 // will be rendered or not.
-function NextButton({ dispatch, answer }) {
-  //If there isn't an answer, return nothing...
+function NextButton({ dispatch, answer, index, numQuestions }) {
   if (answer === null) return;
 
-  // ... otherwise,return the button
-  return (
-    <button
-      className="btn btn-ui"
-      onClick={() => dispatch({ type: "nextQuestion" })}>
-      Next
-    </button>
-  );
+  if (index < numQuestions - 1) {
+    return (
+      <button
+        className="btn btn-ui"
+        onClick={() => dispatch({ type: "nextQuestion" })}>
+        Next
+      </button>
+    );
+  }
+
+  if (index === numQuestions - 1) {
+    return (
+      <button
+        className="btn btn-ui"
+        onClick={() => dispatch({ type: "finish" })}>
+        Finish
+      </button>
+    );
+  }
 }
 
 export default NextButton;
