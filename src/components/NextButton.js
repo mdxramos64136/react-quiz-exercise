@@ -1,5 +1,6 @@
 //Also need to pass the answer state here as it will determine if the button
 // will be rendered or not.
+// Button will only be shown if there is an answer
 function NextButton({ dispatch, answer, index, numQuestions }) {
   if (answer === null) return;
 
