@@ -1,8 +1,8 @@
 :root {
-  --color-darkest: #343a40;
-  --color-dark: #495057;
+  --color-darkest: #022d58;
+  --color-dark: #0a5096;
   --color-medium: #ced4da;
-  --color-light: #f1f3f5;
+  --color-light: #b2d7fa;
 
   --color-theme: #1098ad;
   --color-accent: #ffa94d;
@@ -29,6 +29,20 @@ body {
   padding: 3.2rem;
 }
 
+.logo {
+  animation: rotate 50s linear infinite;
+}
+
+/*Setting the continuous rotation*/
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -41,9 +55,11 @@ body {
 }
 
 .app-header {
-  width: 66rem;
+  width: 100%;
+  max-width: 66rem;
   margin-bottom: 4rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
@@ -120,7 +136,7 @@ progress {
   font-family: inherit;
   color: inherit;
   font-size: 2rem;
-  border: 2px solid var(--color-dark);
+  border: 2px solid #1098ad;
   background-color: var(--color-dark);
   padding: 1.2rem 2.4rem;
   cursor: pointer;
@@ -128,16 +144,25 @@ progress {
   transition: 0.3s;
 }
 
+/*Only apply the hoover if the button is not disabled.*/
 .btn:not([disabled]):hover {
   background-color: var(--color-darkest);
 }
 
+/*Moves if btn is not diabled*/
 .btn-option:not([disabled]):hover {
   transform: translateX(1.2rem);
 }
 
+/*Applies the not-allowed curso if the btn is disabled*/
 .btn[disabled]:hover {
   cursor: not-allowed;
+}
+
+.btn:not([disabled]):hover,
+.btn-option.btn:not([disabled]):hover {
+  background-color: var(--color-darkest);
+  box-shadow: 0 0 6px 2px rgba(63, 177, 238, 0.781);
 }
 
 .btn-ui {
@@ -269,7 +294,7 @@ progress {
   }
 
   .btn {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     padding: 1rem 2rem;
   }
 
@@ -291,6 +316,7 @@ progress {
     float: none;
     width: 100%;
     text-align: center;
+    margin-bottom: 5px;
   }
 }
 
@@ -313,9 +339,10 @@ progress {
   }
 
   .progress {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     gap: 0.8rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
   }
 
   .btn {
