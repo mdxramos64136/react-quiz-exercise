@@ -1,5 +1,14 @@
-function FinishScreen({ points, maxPoints, highestScore, dispatch }) {
+function FinishScreen({
+  points,
+  maxPoints,
+  highestScore,
+  dispatch,
+  timeElapsed,
+}) {
   const percentage = (points / maxPoints) * 100;
+  const minutes = Math.floor(timeElapsed / 60);
+  const seconds = timeElapsed % 60;
+
   let emoji;
   if (percentage === 100) emoji = "🥇";
   if (percentage >= 80 && percentage < 100) emoji = "🥈";
@@ -10,13 +19,18 @@ function FinishScreen({ points, maxPoints, highestScore, dispatch }) {
     <>
       <p className="result">
         You scored&nbsp;
+        <strong className="score">{points}</strong> / {maxPoints} (
+        {Math.ceil(percentage)}%) <span>{emoji}</span>
+      </p>
+      <p className="timeElapsed">
+        It took you{" "}
         <strong>
-          {points} out of {maxPoints} ({Math.ceil(percentage)}%){" "}
-          <span>{emoji}</span>
-        </strong>
+          {minutes}:{seconds}
+        </strong>{" "}
+        to complete the quiz.
       </p>
       <p className="highscore">
-        Highest Score so far: <span>{highestScore} points.</span>
+        Highest score so far: <span>{highestScore} points.</span>
       </p>
       <button
         className="btn btn-ui"

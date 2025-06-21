@@ -218,6 +218,25 @@ progress {
   margin-bottom: 4.8rem;
 }
 
+.score {
+  color: #bdf2f6;
+  text-shadow: 0 0 2px #72e8cf, 1px 1px 6px #10352d;
+}
+
+.timeElapsed {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1.8rem;
+}
+
+.timeElapsed strong {
+  color: #f4faff;
+  text-shadow: 0 0 2px #a3bfff, 0 0 2px #5665ed;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
 .loader-container {
   display: flex;
   flex-direction: column;

@@ -39,6 +39,7 @@ const initialState = {
   points: 0,
   highestScore: 0,
   secondsRemaining: null,
+  timeElapsed: 0,
 };
 
 function reducer(state, action) {
@@ -81,12 +82,14 @@ function reducer(state, action) {
         ...initialState,
         status: "ready",
         questions: state.questions,
+        timeElapsed: 0,
       };
 
     case "tick":
       return {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
+        timeElapsed: state.timeElapsed + 1,
         status: state.secondsRemaining === 0 ? "finished" : state.status,
       };
 
@@ -106,6 +109,7 @@ export default function App() {
       points,
       highestScore,
       secondsRemaining,
+      timeElapsed,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
@@ -121,6 +125,18 @@ export default function App() {
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
+
+  //for the time ellapsed:
+  useEffect(() => {
+    if (status !== "active") return;
+
+    const id = setInterval(() => {
+      dispatch({ type: "tick" });
+    }, 1000); //setInterval
+
+    return () => clearInterval(id);
+  }, [status, dispatch]);
+
   return (
     <div className="app">
       <Header />
@@ -161,6 +177,7 @@ export default function App() {
             maxPoints={maxPoints}
             highestScore={highestScore}
             dispatch={dispatch}
+            timeElapsed={timeElapsed}
           />
         )}
       </Main>
