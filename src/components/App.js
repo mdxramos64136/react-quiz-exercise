@@ -31,7 +31,18 @@ import Timer from "./Timer";
 
 const SECS_PER_QUESTION = 30;
 
+//Shuffling the questions:
+/**
+ * Por quê foi necessário usar o spread operator e nao apenas allQuestions.sort?
+ *
+ */
+function getRandomQuestions(allQuestions, userChoice) {
+  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, userChoice);
+}
+
 const initialState = {
+  allQuestions: [],
   questions: [],
   status: "loading",
   index: 0,
@@ -45,13 +56,20 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
-      return { ...state, questions: action.payload, status: "ready" };
+      return { ...state, allQuestions: action.payload, status: "ready" };
+
     case "start":
+      const getQuestions = getRandomQuestions(
+        state.allQuestions,
+        action.payload
+      );
       return {
         ...state,
         status: "active",
-        secondsRemaining: state.questions.length * SECS_PER_QUESTION,
+        questions: getQuestions,
+        secondsRemaining: action.payload * SECS_PER_QUESTION,
       };
+
     case "dataFailed":
       return { ...state, status: "error" };
 
@@ -81,7 +99,7 @@ function reducer(state, action) {
       return {
         ...initialState,
         status: "ready",
-        questions: state.questions,
+        allQuestions: state.allQuestions,
         timeElapsed: 0,
       };
 
