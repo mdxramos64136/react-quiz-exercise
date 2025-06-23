@@ -19,23 +19,11 @@ import Timer from "./Timer";
  * status: state.secondsRemaining === 0 ? "finished" : state.status, if the 
    timer is equal to zero,  we set the status to finish and then it will trigger 
    the end of the game and render the FinishScreen. 
-
-* secondsRemaining: state.questions.length * SECS_PER_QUESTION:
-  O tempo total é calculado de acordo como numero de perguntas. 
-  No início, nós nao sabemos ainda qual o tamanho do array de 
-  perguntas (questions) já que ele nao foi carregado.
-  Por isso, calculamos no case start, quando o array já está carregado e , portanto, 
-  o seu length já está disponível. 
-
  */
 
 const SECS_PER_QUESTION = 30;
 
 //Shuffling the questions:
-/**
- * Por quê foi necessário usar o spread operator e nao apenas allQuestions.sort?
- *
- */
 function getRandomQuestions(allQuestions, userChoice) {
   const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, userChoice);
@@ -120,6 +108,7 @@ export default function App() {
   //nested destructuring of initialState (state)
   const [
     {
+      allQuestions,
       questions,
       status,
       index,
@@ -135,7 +124,7 @@ export default function App() {
   const maxPoints = questions.reduce((acc, item) => acc + item.points, 0);
 
   // derived state
-  const numQuestions = questions.length;
+  const numQuestions = allQuestions.length;
 
   useEffect(function () {
     fetch("http://localhost:8000/questions")
@@ -168,7 +157,7 @@ export default function App() {
           <>
             <Progress
               index={index}
-              numQuestions={numQuestions}
+              numQuestions={questions.length}
               points={points}
               maxPoints={maxPoints}
             />
