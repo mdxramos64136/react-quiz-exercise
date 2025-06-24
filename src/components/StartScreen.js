@@ -10,9 +10,11 @@ function StartScreen({ numQuestions, dispatch }) {
       <h3>{numQuestions} question to test your React mastery</h3>
       <div>
         <h4>How many question do you want to answer?</h4>
-        <div className="btnGroup">
+        <div className="btnGroup" role="group" aria-label="Number of questions">
           {[15, 30, 45, 60].map((num) => (
             <button
+              aria-pressed={userChoice === num}
+              type="button"
               key={num}
               className={`btn-user-option ${
                 userChoice === num ? "btnSelected" : ""
@@ -25,9 +27,11 @@ function StartScreen({ numQuestions, dispatch }) {
         </div>
       </div>
       <button
-        className="btn btn-ui"
-        onClick={() => dispatch({ type: "start", payload: userChoice })}>
-        Lest's Start
+        type="button"
+        className="btn btn-ui btnStart"
+        onClick={() => dispatch({ type: "start", payload: userChoice })}
+        disabled={userChoice === null}>
+        Let's Start
       </button>
     </div>
   );

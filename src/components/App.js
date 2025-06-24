@@ -92,6 +92,8 @@ function reducer(state, action) {
       };
 
     case "tick":
+      //if (state.secondsRemaining === 0) return { ...state, status: "finished" };
+
       return {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
@@ -133,7 +135,6 @@ export default function App() {
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
 
-  //for the time ellapsed:
   useEffect(() => {
     if (status !== "active") return;
 
@@ -172,7 +173,7 @@ export default function App() {
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
-                numQuestions={numQuestions}
+                numQuestions={questions.length}
                 index={index}
               />
             </Footer>

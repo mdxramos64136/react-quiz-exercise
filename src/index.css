@@ -84,6 +84,7 @@ h1 {
   font-size: 5.6rem;
   text-align: center;
   width: 100%;
+  margin-top: 0.3em;
 }
 
 h2 {
@@ -94,13 +95,15 @@ h2 {
 h3 {
   font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 h4 {
   font-size: 2.2rem;
   font-weight: 600;
-  margin-bottom: 2.4rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  text-align: center;
 }
 
 .start {
@@ -188,6 +191,7 @@ progress {
 .btnGroup {
   display: flex;
   justify-content: space-between;
+  padding-top: 2.2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -217,7 +221,7 @@ progress {
     0 0 6px 3px rgba(121, 21, 228, 0.781);
 }
 
-.btn-option.correct {
+/* .btn-option.correct {
   background-color: var(--color-theme);
   border: 2px solid var(--color-theme);
   color: var(--color-light);
@@ -226,6 +230,17 @@ progress {
   background-color: var(--color-accent);
   border: 2px solid var(--color-accent);
   color: var(--color-darkest);
+} */
+
+.btn-option.correct {
+  background-color: rgb(225, 251, 186);
+  border: 2px solid rgb(1, 127, 1);
+  color: rgb(1, 127, 1);
+}
+.btn-option.wrong {
+  background-color: #fed8d8;
+  border: 2px solid #8d0404;
+  color: #820404;
 }
 
 .answer {
@@ -338,6 +353,18 @@ progress {
   padding: 0.8rem;
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (max-width: 768px) {
   .main,
   .app-header {
@@ -381,6 +408,27 @@ progress {
     padding: 1.6rem;
   }
 
+  h1 {
+    margin-top: 1.4em;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    margin-top: 1.1vh;
+  }
+
+  h4 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+  .app {
+    min-height: 80vh;
+  }
+
+  .app-header {
+    margin-bottom: 3rem;
+  }
+
   .main,
   .app-header {
     width: 100%;
@@ -403,6 +451,21 @@ progress {
   .btn {
     font-size: 1.6rem;
     padding: 0.8rem 1.6rem;
+  }
+
+  .btnGroup {
+    margin-bottom: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .btnStart {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    position: relative;
+    top: 20rem;
+    bottom: 3rem;
+    font-weight: 600;
   }
 
   .result,

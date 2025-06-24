@@ -13,7 +13,8 @@ function Options({ question, dispatch, answer }) {
           }`}
           key={option}
           disabled={hasAnswer}
-          onClick={() => dispatch({ type: "newAnswer", payload: index })}>
+          onClick={() => dispatch({ type: "newAnswer", payload: index })}
+          aria-pressed={index === answer}>
           {option}
         </button>
       ))}
