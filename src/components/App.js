@@ -129,7 +129,8 @@ export default function App() {
   const numQuestions = allQuestions.length;
 
   useEffect(function () {
-    fetch("http://localhost:8000/questions")
+    //fetch("http://localhost:8000/questions")
+    fetch("/questions.json")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
