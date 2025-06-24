@@ -342,8 +342,6 @@ progress {
   }
 }
 
-/* ********** */
-/* First counter example */
 .counter {
   display: flex;
   flex-direction: column;
@@ -468,10 +466,8 @@ progress {
   .btnStart {
     width: 95%;
     height: 5rem;
-    margin-top: auto;
+    margin-top: 20rem;
     margin-bottom: 1rem;
-    position: relative;
-    top: 20rem;
     bottom: 3rem;
     font-weight: 600;
     font-size: 2rem;
@@ -509,7 +505,7 @@ progress {
   }
 
   .start {
-    justify-content: center;
+    justify-content: space-between;
   }
   .counter {
     margin: 2rem;
