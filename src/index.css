@@ -484,7 +484,7 @@ progress {
 
   .btn-option {
     margin-bottom: 0.5rem;
-    height: 6rem;
+    height: 5rem;
   }
 
   .btnNext {
@@ -506,6 +506,8 @@ progress {
 
   .start {
     justify-content: space-between;
+    min-height: 100vh;
+    padding: 2rem 1rem;
   }
   .counter {
     margin: 2rem;
