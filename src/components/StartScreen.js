@@ -7,28 +7,30 @@ function StartScreen({ numQuestions, dispatch }) {
 
   return (
     <div className="start">
-      <div className="start-spacer-top"></div>
-
-      <div className="start-content">
+      <div className="startContent">
         <h3>{numQuestions} question to test your React mastery</h3>
-        <h4>How many question do you want to answer?</h4>
-        <div className="btnGroup" role="group" aria-label="Number of questions">
-          {[15, 30, 45, 60].map((num) => (
-            <button
-              aria-pressed={userChoice === num}
-              type="button"
-              key={num}
-              className={`btn-user-option ${
-                userChoice === num ? "btnSelected" : ""
-              }`}
-              value={num}
-              onClick={() => handleClick(num)}>
-              {num}
-            </button>
-          ))}
+        <div>
+          <h4>How many question do you want to answer?</h4>
+          <div
+            className="btnGroup"
+            role="group"
+            aria-label="Number of questions">
+            {[15, 30, 45, 60].map((num) => (
+              <button
+                aria-pressed={userChoice === num}
+                type="button"
+                key={num}
+                className={`btn-user-option ${
+                  userChoice === num ? "btnSelected" : ""
+                } `}
+                value={num}
+                onClick={() => handleClick(num)}>
+                {num}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-
       <button
         type="button"
         className="btn btn-ui btnStart"
