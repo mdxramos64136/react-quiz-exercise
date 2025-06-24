@@ -9,7 +9,7 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -409,7 +409,15 @@ progress {
 /* Mobile breakpoint */
 @media (max-width: 480px) {
   body {
-    padding: 1.6rem;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+
+  html,
+  body {
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 
   h1 {
@@ -418,13 +426,16 @@ progress {
   }
 
   h3 {
-    margin-top: 3rem;
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
     justify-content: center;
+    font-size: 2.2rem;
   }
 
   h4 {
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
   .app {
     min-height: 80vh;
@@ -461,12 +472,16 @@ progress {
   .btnGroup {
     margin-bottom: 1.5rem;
     padding-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
   }
 
   .btnStart {
     width: 95%;
     height: 5rem;
-    margin-top: 16rem;
+    /* margin-top: 16rem; */
+    margin-top: 0;
     margin-bottom: 1rem;
     bottom: 3rem;
     font-weight: 600;
@@ -484,7 +499,7 @@ progress {
 
   .btn-option {
     margin-bottom: 0.5rem;
-    height: 5rem;
+    height: 6rem;
   }
 
   .btnNext {
@@ -505,9 +520,12 @@ progress {
   }
 
   .start {
-    justify-content: space-between;
-    min-height: 100vh;
-    padding: 2rem 1rem;
+    /* justify-content: space-between; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza verticalmente */
+    align-items: center;
+    min-height: calc(100vh - 4rem); /* altura visível menos o padding */
   }
   .counter {
     margin: 2rem;
