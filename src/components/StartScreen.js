@@ -7,8 +7,10 @@ function StartScreen({ numQuestions, dispatch }) {
 
   return (
     <div className="start">
-      <h3>{numQuestions} question to test your React mastery</h3>
-      <div>
+      <div className="start-spacer-top"></div>
+
+      <div className="start-content">
+        <h3>{numQuestions} question to test your React mastery</h3>
         <h4>How many question do you want to answer?</h4>
         <div className="btnGroup" role="group" aria-label="Number of questions">
           {[15, 30, 45, 60].map((num) => (
@@ -18,7 +20,7 @@ function StartScreen({ numQuestions, dispatch }) {
               key={num}
               className={`btn-user-option ${
                 userChoice === num ? "btnSelected" : ""
-              } `}
+              }`}
               value={num}
               onClick={() => handleClick(num)}>
               {num}
@@ -26,6 +28,7 @@ function StartScreen({ numQuestions, dispatch }) {
           ))}
         </div>
       </div>
+
       <button
         type="button"
         className="btn btn-ui btnStart"

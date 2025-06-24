@@ -410,6 +410,8 @@ progress {
 @media (max-width: 480px) {
   body {
     padding: 1rem 1rem 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 
   html,
@@ -421,8 +423,12 @@ progress {
   }
 
   h1 {
-    margin-top: 1em;
-    padding-bottom: 0;
+    /* margin-top: 1em;
+    padding-bottom: 0; */
+    font-size: 3.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1.6rem;
+    text-align: center;
   }
 
   h3 {
@@ -443,6 +449,11 @@ progress {
 
   .app-header {
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 1.5rem;
   }
 
   .main,
@@ -455,6 +466,10 @@ progress {
   img {
     width: 8rem;
     margin-bottom: 1rem;
+  }
+
+  img.logo {
+    margin-top: 1.5rem; /* adiciona respiro no topo */
   }
 
   .progress {
@@ -480,10 +495,8 @@ progress {
   .btnStart {
     width: 95%;
     height: 5rem;
-    /* margin-top: 16rem; */
-    margin-top: 0;
-    margin-bottom: 1rem;
-    bottom: 3rem;
+    margin-top: 25rem;
+    margin-bottom: 2rem;
     font-weight: 600;
     font-size: 2rem;
   }
@@ -519,14 +532,15 @@ progress {
     padding: 1.2rem;
   }
 
-  .start {
-    /* justify-content: space-between; */
+  /* .start {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centraliza verticalmente */
+    justify-content: flex-start;
+    height: 100vh;
     align-items: center;
-    min-height: calc(100vh - 4rem); /* altura visível menos o padding */
-  }
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  } */
   .counter {
     margin: 2rem;
     font-size: 1.6rem;
