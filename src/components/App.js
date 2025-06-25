@@ -150,7 +150,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header />
+      {status === "active" || <Header />}
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
@@ -159,6 +159,9 @@ export default function App() {
         )}
         {status === "active" && (
           <>
+            <div className="quiz-logo">
+              <img src="logo512.png" alt="React logo" className="logo" />
+            </div>
             <Progress
               index={index}
               numQuestions={questions.length}

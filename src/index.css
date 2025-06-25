@@ -1,14 +1,15 @@
 :root {
   --color-darkest: #022d58;
-  --color-dark: #0a5096;
+  --color-dark: #083f76;
   --color-medium: #ced4da;
-  --color-light: #b2d7fa;
+  --color-light: #c5e0fa;
 
   --color-theme: #1098ad;
   --color-accent: #ffa94d;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 
 * {
   margin: 0;
@@ -55,6 +56,7 @@ body {
   max-width: 100%;
 }
 
+.quiz-logo,
 .app-header {
   width: 100%;
   max-width: 66rem;
@@ -94,13 +96,20 @@ h2 {
 }
 
 h3 {
-  font-size: 2.4rem;
+  font-family: "Fredericka the Great", serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
   font-weight: 600;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 h4 {
+  font-family: "Fredericka the Great", serif;
+  font-style: normal;
   font-size: 2.2rem;
+  letter-spacing: 2px;
   font-weight: 600;
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
@@ -124,6 +133,7 @@ h4 {
 }
 
 progress {
+  appearance: none;
   -webkit-appearance: none;
   width: 100%;
   height: 12px;
@@ -135,8 +145,16 @@ progress {
   border-radius: 100px;
 }
 ::-webkit-progress-value {
-  background-color: var(--color-theme);
+  background-color: #1098ad;
   border-radius: 100px;
+  box-shadow: 0 0 4px #8dc7e6, 0 0 6px #5c0bad inset;
+}
+
+/*Firefox-Mozila*/
+::-moz-progress-bar {
+  background-color: #1098ad;
+  border-radius: 100px;
+  box-shadow: 0 0 4px #8dc7e6, 0 0 6px #5c0bad inset;
 }
 
 .btn {
@@ -167,10 +185,16 @@ progress {
   cursor: not-allowed;
 }
 
-.btn:not([disabled]):hover,
 .btn-option.btn:not([disabled]):hover {
   background-color: var(--color-darkest);
   box-shadow: 0 0 6px 2px rgba(63, 177, 238, 0.781);
+}
+
+.btnStart[disabled] {
+  background-color: #495057;
+  color: rgb(129, 128, 128);
+  border-color: #495057;
+  font-style: italic;
 }
 
 .btn-ui {
@@ -432,6 +456,12 @@ progress {
     margin-top: 4rem;
     margin-bottom: 1rem;
   }
+
+  ::-webkit-progress-value {
+    background-color: green;
+    border-radius: 100px;
+  }
+
   .app {
     min-height: 80vh;
     max-width: 100vh;
@@ -475,6 +505,7 @@ progress {
     flex: 1; /* distribui igualmente */
     min-width: 4rem; /* evita encolher demais */
     margin: 0 0.4rem;
+    font-size: 1.8rem;
   }
 
   .btnStart {
@@ -483,6 +514,7 @@ progress {
     margin-bottom: 2rem;
     position: relative;
     font-weight: 600;
+    font-size: 2.2rem;
   }
 
   .result,
