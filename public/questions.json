@@ -769,6 +769,336 @@
       ],
       "correctOption": 0,
       "points": 20
+    },
+    {
+      "question": "What is the purpose of the useCallback hook in React?",
+      "options": [
+        "To memoize a component",
+        "To create a new component",
+        "To memoize a function",
+        "To update state"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "How does useMemo improve performance in React?",
+      "options": [
+        "By reducing API calls",
+        "By memoizing component trees",
+        "By caching calculated values",
+        "By batching state updates"
+      ],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "Which of the following is NOT a valid React hook?",
+      "options": [
+        "useFetch",
+        "useEffect",
+        "useState",
+        "useReducer"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What is the main reason for using keys in lists?",
+      "options": [
+        "To increase performance",
+        "To prevent duplicate items",
+        "To help React identify items",
+        "To style list items"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which prop is commonly used to render dynamic content inside a component?",
+      "options": [
+        "style",
+        "children",
+        "className",
+        "onClick"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "How do you conditionally apply a class in JSX?",
+      "options": [
+        "Using template strings",
+        "Using the ternary operator",
+        "Using the & operator",
+        "Using JSX brackets"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "How are props different from state?",
+      "options": [
+        "Props are immutable",
+        "Props are managed internally",
+        "State is passed by parent",
+        "State does not cause re-renders"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What causes an uncontrolled input warning in React?",
+      "options": [
+        "Setting both value and defaultValue",
+        "Leaving inputs without a name",
+        "Using number inputs",
+        "Binding inputs via ref"
+      ],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "How can you lift state up?",
+      "options": [
+        "Move the state to the parent component",
+        "Use props drilling",
+        "Use useContext",
+        "Apply global state"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "Which one describes JSX correctly?",
+      "options": [
+        "XML-like syntax used in React",
+        "A template language for JavaScript",
+        "A browser-specific syntax",
+        "An HTML replacement"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "When should you use useReducer over useState?",
+      "options": [
+        "When dealing with form state",
+        "For simple boolean flags",
+        "When managing unrelated states",
+        "When state logic is complex"
+      ],
+      "correctOption": 3,
+      "points": 20
+    },
+    {
+      "question": "What does the useImperativeHandle hook allow you to do?",
+      "options": [
+        "Call parent methods from a child",
+        "Modify refs in child components",
+        "Access hooks outside of components",
+        "Manipulate props"
+      ],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "question": "What’s the result of calling setState in a useEffect loop without dependencies?",
+      "options": [
+        "An error is thrown",
+        "Infinite re-renders",
+        "Nothing happens",
+        "Only runs once"
+      ],
+      "correctOption": 0,
+      "points": 20
+    },
+    {
+      "question": "How does React differ from traditional DOM manipulation?",
+      "options": [
+        "It mutates DOM directly",
+        "It renders HTML faster",
+        "It uses a virtual DOM",
+        "It prevents re-renders"
+      ],
+      "correctOption": 2,
+      "points": 20
+    },
+    {
+      "question": "Which React hook can cause layout shifts if misused?",
+      "options": [
+        "useLayoutEffect",
+        "useMemo",
+        "useEffect",
+        "useCallback"
+      ],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "question": "How do you make a component only render once on mount?",
+      "options": [
+        "useEffect with empty dependency array",
+        "Using componentDidMount",
+        "Using shouldComponentUpdate",
+        "Disabling all props"
+      ],
+      "correctOption": 2,
+      "points": 20
+    },
+    {
+      "question": "How do you prevent a component from re-rendering?",
+      "options": [
+        "Remove all state",
+        "Use React.memo",
+        "Wrap in useEffect",
+        "Freeze the props"
+      ],
+      "correctOption": 3,
+      "points": 20
+    },
+    {
+      "question": "What is the role of context in React?",
+      "options": [
+        "For local component state",
+        "For static props",
+        "For global-like state",
+        "For class-based components"
+      ],
+      "correctOption": 0,
+      "points": 20
+    },
+    {
+      "question": "What makes useRef useful for DOM manipulation?",
+      "options": [
+        "It listens to DOM changes",
+        "It can persist a mutable value",
+        "It stores props",
+        "It rerenders on change"
+      ],
+      "correctOption": 2,
+      "points": 20
+    },
+    {
+      "question": "How can you make a hook reusable?",
+      "options": [
+        "By prefixing with 'use' and abstracting logic",
+        "Using useMemo",
+        "By declaring in App.js",
+        "By converting to class"
+      ],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "question": "What’s the main benefit of useTransition?",
+      "options": [
+        "It avoids rendering",
+        "It adds transitions",
+        "It allows concurrent rendering",
+        "It debounces values"
+      ],
+      "correctOption": 0,
+      "points": 30
+    },
+    {
+      "question": "Which pattern is most suitable for shared form logic?",
+      "options": [
+        "Higher-order components",
+        "Render props",
+        "Custom hooks",
+        "Controlled components"
+      ],
+      "correctOption": 2,
+      "points": 30
+    },
+    {
+      "question": "How does Suspense improve performance?",
+      "options": [
+        "By skipping rendering",
+        "By waiting for data before rendering",
+        "By hiding async data",
+        "By batching updates"
+      ],
+      "correctOption": 3,
+      "points": 30
+    },
+    {
+      "question": "What can you use to simulate componentDidUpdate in functional components?",
+      "options": [
+        "useEffect with specific dependencies",
+        "useMemo",
+        "useRef",
+        "useLayoutEffect only"
+      ],
+      "correctOption": 1,
+      "points": 30
+    },
+    {
+      "question": "What are concurrent features useful for in React?",
+      "options": [
+        "To prioritize rendering",
+        "To optimize bundle size",
+        "To avoid re-renders",
+        "To load images faster"
+      ],
+      "correctOption": 0,
+      "points": 30
+    },
+    {
+      "question": "Which problem does React 18 solve better?",
+      "options": [
+        "Flickering UIs",
+        "Prop drilling",
+        "Hydration mismatch",
+        "Async rendering"
+      ],
+      "correctOption": 2,
+      "points": 30
+    },
+    {
+      "question": "Why use a fallback in Suspense?",
+      "options": [
+        "To preload modules",
+        "To avoid hydration",
+        "To render fallback UI while loading",
+        "To prevent crashes"
+      ],
+      "correctOption": 1,
+      "points": 30
+    },
+    {
+      "question": "What is a key difference between useId and uuid libraries?",
+      "options": [
+        "useId is SSR safe",
+        "uuid is faster",
+        "uuid causes hydration issues",
+        "useId is client-only"
+      ],
+      "correctOption": 3,
+      "points": 30
+    },
+    {
+      "question": "What does React.lazy enable?",
+      "options": [
+        "Component optimization",
+        "Global state",
+        "Code splitting",
+        "Routing"
+      ],
+      "correctOption": 2,
+      "points": 30
+    },
+    {
+      "question": "What makes StrictMode helpful in React?",
+      "options": [
+        "It speeds up rendering",
+        "It disables async code",
+        "It highlights unsafe lifecycle methods",
+        "It replaces PropTypes"
+      ],
+      "correctOption": 0,
+      "points": 30
     }
   ]
 }
