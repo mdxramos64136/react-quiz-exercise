@@ -31,6 +31,7 @@ body {
 }
 
 .logo {
+  width: 10rem;
   animation: rotate 50s linear infinite;
 }
 
@@ -84,7 +85,7 @@ h1 {
   font-family: "Fredericka the Great", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 5.6rem;
+  font-size: 3.6rem;
   text-align: center;
   width: 100%;
   margin-top: 0.3em;
@@ -98,9 +99,9 @@ h2 {
 h3 {
   font-family: "Fredericka the Great", serif;
   font-style: normal;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   letter-spacing: 2px;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -108,9 +109,9 @@ h3 {
 h4 {
   font-family: "Fredericka the Great", serif;
   font-style: normal;
-  font-size: 2.2rem;
-  letter-spacing: 2px;
-  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 500;
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
   text-align: center;
@@ -145,9 +146,9 @@ progress {
   border-radius: 100px;
 }
 ::-webkit-progress-value {
-  background-color: #1098ad;
+  background-color: #6bdbec;
   border-radius: 100px;
-  box-shadow: 0 0 4px #8dc7e6, 0 0 6px #5c0bad inset;
+  box-shadow: 0 0 3px #5c0bad inset, 0 0 7px #5c0bad inset;
 }
 
 /*Firefox-Mozila*/
@@ -191,6 +192,9 @@ progress {
 }
 
 .btnStart[disabled] {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
   background-color: #495057;
   color: rgb(129, 128, 128);
   border-color: #495057;
@@ -202,7 +206,11 @@ progress {
 }
 
 .btnStart {
-  width: 88%;
+  width: 50%;
+  font-family: "Fredericka the Great", serif;
+  font-weight: 200;
+  font-style: normal;
+  letter-spacing: 2px;
 }
 
 .options {
@@ -225,6 +233,10 @@ progress {
 }
 
 .btn-user-option {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 3px;
   width: 20%;
   margin-right: 1.2rem;
   margin-bottom: 3.2rem;
@@ -234,8 +246,7 @@ progress {
   border: 2px solid #1098ad;
   background-color: var(--color-dark);
   color: var(--color-light);
-  font-family: inherit;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
 
@@ -249,17 +260,6 @@ progress {
   box-shadow: 0 0 6px 2px rgba(135, 197, 230, 0.781),
     0 0 6px 3px rgba(121, 21, 228, 0.781);
 }
-
-/* .btn-option.correct {
-  background-color: var(--color-theme);
-  border: 2px solid var(--color-theme);
-  color: var(--color-light);
-}
-.btn-option.wrong {
-  background-color: var(--color-accent);
-  border: 2px solid var(--color-accent);
-  color: var(--color-darkest);
-} */
 
 .btn-option.correct {
   background-color: rgb(225, 251, 186);
@@ -366,7 +366,7 @@ progress {
 }
 
 /* ********** */
-/* First counter example */
+
 .counter {
   display: flex;
   flex-direction: column;
@@ -456,10 +456,15 @@ progress {
     margin-top: 4rem;
     margin-bottom: 1rem;
   }
-
+  /* 
   ::-webkit-progress-value {
     background-color: green;
     border-radius: 100px;
+  } */
+
+  img {
+    width: 8rem;
+    margin-bottom: 1rem;
   }
 
   .app {
@@ -478,9 +483,8 @@ progress {
     align-items: center;
   }
 
-  img {
-    width: 8rem;
-    margin-bottom: 1rem;
+  .logo {
+    width: 13rem;
   }
 
   .progress {
@@ -502,14 +506,18 @@ progress {
   }
 
   .btn-user-option {
-    flex: 1; /* distribui igualmente */
-    min-width: 4rem; /* evita encolher demais */
+    flex: 1;
+    min-width: 4rem;
     margin: 0 0.4rem;
     font-size: 1.8rem;
   }
 
+  .btn-option {
+    font-size: 2rem;
+  }
+
   .btnStart {
-    width: 95%;
+    width: 100%;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
     position: relative;
