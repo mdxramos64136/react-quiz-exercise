@@ -9,7 +9,7 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +52,7 @@ body {
 
 .main {
   width: 50rem;
+  max-width: 100%;
 }
 
 .app-header {
@@ -93,19 +94,14 @@ h2 {
 }
 
 h3 {
-  font-family: "Fredericka the Great", serif;
-  font-style: normal;
-  font-size: 4rem;
-  font-weight: 500;
+  font-size: 2.4rem;
+  font-weight: 600;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 h4 {
-  font-family: "Fredericka the Great", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 3rem;
+  font-size: 2.2rem;
+  font-weight: 600;
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
   text-align: center;
@@ -182,12 +178,7 @@ progress {
 }
 
 .btnStart {
-  width: 100%;
-  font-family: "Fredericka the Great", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.5rem;
-  letter-spacing: 0.4rem;
+  width: 88%;
 }
 
 .options {
@@ -204,14 +195,14 @@ progress {
 
 .btnGroup {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 2.2rem;
   margin-bottom: 1.5rem;
-  /* margin-right: 0; */
 }
 
 .btn-user-option {
-  width: 22%;
+  width: 20%;
+  margin-right: 1.2rem;
   margin-bottom: 3.2rem;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -219,11 +210,8 @@ progress {
   border: 2px solid #1098ad;
   background-color: var(--color-dark);
   color: var(--color-light);
-  font-family: "Fredericka the Great", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  letter-spacing: 0.4rem;
+  font-family: inherit;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -237,6 +225,17 @@ progress {
   box-shadow: 0 0 6px 2px rgba(135, 197, 230, 0.781),
     0 0 6px 3px rgba(121, 21, 228, 0.781);
 }
+
+/* .btn-option.correct {
+  background-color: var(--color-theme);
+  border: 2px solid var(--color-theme);
+  color: var(--color-light);
+}
+.btn-option.wrong {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-darkest);
+} */
 
 .btn-option.correct {
   background-color: rgb(225, 251, 186);
@@ -342,6 +341,8 @@ progress {
   }
 }
 
+/* ********** */
+/* First counter example */
 .counter {
   display: flex;
   flex-direction: column;
@@ -409,51 +410,35 @@ progress {
 /* Mobile breakpoint */
 @media (max-width: 480px) {
   body {
-    padding: 1rem 1rem 2rem 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding: 1rem;
   }
 
   html,
   body {
-    height: 100vh;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
+    overflow-x: hidden;
   }
 
   h1 {
-    /* margin-top: 1em;
-    padding-bottom: 0; */
-    font-size: 3.4rem;
-    margin-top: 1rem;
-    margin-bottom: 1.6rem;
-    text-align: center;
+    margin-top: 1.4em;
+    padding-bottom: 0;
   }
 
   h3 {
-    margin-top: 2.4rem;
-    margin-bottom: 1rem;
+    margin-top: 1.1vh;
     justify-content: center;
-    font-size: 2.2rem;
   }
 
   h4 {
-    margin-top: 3rem;
-    font-size: 1.8rem;
+    margin-top: 4rem;
     margin-bottom: 1rem;
   }
   .app {
     min-height: 80vh;
+    max-width: 100vh;
   }
 
   .app-header {
     margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding-top: 1.5rem;
   }
 
   .main,
@@ -466,10 +451,6 @@ progress {
   img {
     width: 8rem;
     margin-bottom: 1rem;
-  }
-
-  img.logo {
-    margin-top: 1.5rem; /* adiciona respiro no topo */
   }
 
   .progress {
@@ -485,45 +466,23 @@ progress {
   }
 
   .btnGroup {
-    margin-bottom: 1.5rem;
-    padding-top: 3rem;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem;
+  }
+
+  .btn-user-option {
+    flex: 1; /* distribui igualmente */
+    min-width: 4rem; /* evita encolher demais */
+    margin: 0 0.4rem;
   }
 
   .btnStart {
     width: 95%;
-    height: 5rem;
-    margin-top: 25rem;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    font-size: 2rem;
-  }
-
-  .timer {
-    font-size: 2.3rem;
-    padding: 0.8rem 1.6rem;
-  }
-
-  .btn-user-option {
-    font-size: 1.8rem;
-  }
-
-  .btn-option {
-    margin-bottom: 0.5rem;
-    height: 6rem;
-  }
-
-  .btnNext {
     margin-top: 1.5rem;
-    font-size: 2.3rem;
-    font-family: "Fredericka the Great", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.5rem;
-    letter-spacing: 0.4rem;
-    /* padding: 1.35rem 2.8rem; */
+    margin-bottom: 2rem;
+    position: relative;
+    font-weight: 600;
   }
 
   .result,
@@ -532,15 +491,9 @@ progress {
     padding: 1.2rem;
   }
 
-  /* .start {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100vh;
-    align-items: center;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-  } */
+  .start {
+    justify-content: center;
+  }
   .counter {
     margin: 2rem;
     font-size: 1.6rem;
